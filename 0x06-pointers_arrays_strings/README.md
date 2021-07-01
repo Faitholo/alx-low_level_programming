@@ -1,0 +1,1 @@
+This pointer contains pointers, arrays and strings
