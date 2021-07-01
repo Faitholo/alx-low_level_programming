@@ -1,1 +1,1 @@
-This pointer contains pointers, arrays and strings
+This project contains pointers, arrays and strings
