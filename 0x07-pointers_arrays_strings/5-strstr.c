@@ -1,35 +1,34 @@
 #include "holberton.h"
-
 /**
- * *_strstr - main function.
- * @haystack: Pointer to the string to search.
- * @needle: Pointer to the substring to find.
+ * _strstr - a function that locates a substring
+ * @haystack: locate a substring
+ * @needle: substring to locate
  *
- * Description: This function locates a substring.
- *
- * Return: A pointer to the beginning of the located substring, or
- * NULL if the substring is not found.
+ * Return: pointer to the beginning of the located substring,
+ * or NULL, if substring is not found
  */
-
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0;
+	char *h = haystack;
+	char *n = needle;
 
-	while (needle[i])
+	while (*h)
 	{
-		while (*haystack)
+		n = needle;
+		h = haystack;
+		while (*n)
 		{
-			if (*haystack == needle[i])
+			if (*h == *n)
 			{
-				return (haystack);
+				n++;
+				h++;
 			}
-			haystack++;
+			else
+				break;
 		}
-		if (needle == 0 || *needle == '\0')
-		{
-			return (0);
-		}
-		i++;
+		if (*n == '\0')
+			return (haystack);
+		haystack++;
 	}
-	return (NULL);
+	return (0);
 }
