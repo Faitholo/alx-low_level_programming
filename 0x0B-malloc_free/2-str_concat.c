@@ -1,38 +1,45 @@
 #include "holberton.h"
 #include <stdlib.h>
+
 /**
- * str_concat - concatenates two strings
- * @s1: first string
- * @s2: second string
- * Return: pointer to new space in memory or null
- **/
+ * *str_concat - main function.
+ * @s1: Primer string.
+ * @s2: Segundo string.
+ *
+ * Description: Escriba una función que devuelva un puntero a
+ * un espacio recién asignado en la memoria, que contiene
+ * una copia de la cadena dada como parámetro.
+ * Return: The pointer to str.
+ */
+
 char *str_concat(char *s1, char *s2)
 {
-	char *strDup;
-	int i, j;
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
+	int size; /* Tamaño del string*/
+	int size2; /* Tamañano del segundo string */
+	int i, j; /* Iteradores de bucle */
+	char *array; /* Salida */
+
+	if (!s1)
+		s1 = ""; /* Devuelve un string vacio */
+	if (!s2)
 		s2 = "";
-	i = j = 0;
-	while (s1[i] != '\0')
-		i++;
-	while (s2[j] != '\0')
-		j++;
-	strDup = malloc(sizeof(char) * (i + j + 1));
-	if (strDup == NULL)
-		return (NULL);
-	i = j = 0;
-	while (s1[i] != '\0')
+	for (size = 0; s1[size] != '\0'; size++) /* leng del string */
+		;
+	for (size2 = 0; s2[size2] != '\0'; size2++) /* leng string */
+		;
+	array = malloc(((size) + (size2 + 1)) * sizeof(char)); /* New memory alloc */
+
+	if (!array)
 	{
-		strDup[i] = s1[i];
-		i++;
+		return (NULL); /* Devuelve NULLL si malloc falla */
 	}
-	while (s2[j] != '\0')
+	for (i = 0; i < size; i++)
 	{
-		strDup[i] = s2[j];
-		i++, j++;
+		array[i] = s1[i]; /* Copiamos string en base a string dado por main */
 	}
-	strDup[i] = '\0';
-	return (strDup);
+	for (j = 0; j < (size2 + 1); j++)
+	{
+		array[i + j] = s2[j]; /* Copiamos string en base a string dado por main */
+	}
+	return (array); /* Devolvemos string nuevo */
 }
