@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-/**
+/*
  * string_nconcat - concatenates two strings
  * @s1: first string
  * @s2: second string
