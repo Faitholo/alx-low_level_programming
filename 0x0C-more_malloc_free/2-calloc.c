@@ -1,24 +1,21 @@
-#include "holberton.h"
-
+#include <stdlib.h>
 /**
- * _calloc - Funtion
- *
- * @nmemb: Elements
- * @size: Lenght
- *
- * Return: Pointer
+ * *_calloc - call
+ * @nmemb: n
+ * @size: size
+ * Return: 0
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	unsigned int i;
-	char *ptn;
+	char *memory;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	ptn = malloc(nmemb * size);
-	if (!ptn)
+	memory = malloc(nmemb * size);
+	if (memory == NULL)
 		return (NULL);
 	for (i = 0; i < nmemb * size; i++)
-		ptn[i] = 0;
-	return (ptn);
+		*(memory + i) = 0;
+	return ((void *)memory);
 }
