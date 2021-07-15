@@ -1,23 +1,26 @@
-#include <stdlib.h>
 #include "holberton.h"
+
 /**
- * array_range - creates an array of integers from min to max.
- * @min: minimum int in array
- * @max: maximum int in array
- * Return: pointer to array or null
- **/
+ * array_range - Funtion that create an array of integers
+ *
+ * @min: minimum value
+ * @max: mavimum value
+ * Return: pointer
+ */
 int *array_range(int min, int max)
 {
-	int *p;
-	int i, size;
+	int *ptn, i;
 
 	if (min > max)
 		return (NULL);
-	size = (max - min) + 1;
-	p = malloc(size * sizeof(*p));
-	if (p == NULL)
+
+	ptn = malloc(sizeof(int) * (max - min + 1));
+
+	if (!ptn)
 		return (NULL);
-	for (i = 0; i < size && min <= max; i++, min++)
-		*(p + i) = min;
-	return (p);
+
+	for (i = 0; i < (max - min + 1); i++)
+		ptn[i] = min + i;
+	return (ptn);
+
 }
