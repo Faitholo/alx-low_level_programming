@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  *main - Principal functin
  * @ac: cant args
