@@ -41,6 +41,3 @@ What you should learn from this project:
 * Write a program that displays the information contained in the ELF header at the start of an ELF file.
 
 ---
-
-## Author
-* **Jose Muñoz** - [jose120918](https://github.com/jose120918)
