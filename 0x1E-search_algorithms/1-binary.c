@@ -1,5 +1,4 @@
 #include "search_algos.h"
-
 /**
 * pri_arr - prints array
 * array = array
